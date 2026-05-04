@@ -65,7 +65,7 @@ function App() {
       <Container maxW="650px">
         <VStack gap={5} align="stretch">
           <Box bg="gray.800" p={6} borderRadius="2xl" boxShadow="md">
-            <Heading size="lg" color="white">]\\[]\[][``]
+            <Heading size="lg" color="white">
               Yapper
             </Heading>
             <Text color="gray.400" mt={2}>
