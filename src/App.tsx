@@ -11,14 +11,14 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import type { Tweet } from "./types/Tweet";
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "./utils/supabase";
 
 function App() {
+  // Tweets is the current list of tweets shown
+  // setTweets is how React updates whats shown
+  // We start with no tweets
   const [tweets, setTweets] = useState<Tweet[]>([]);
-  // input is what is currently typed in the box
-  // setInput is how React knows about newly typed data
-  const [input, setInput] = useState("");
   useEffect(() => {
     async function load() {
       const { data, error } = await supabase
@@ -32,6 +32,10 @@ function App() {
 
     load();
   }, []);
+
+  // input is what is currently typed in the box
+  // setInput is how React knows about newly typed data
+  const [input, setInput] = useState("");
 
   // This function runs when we click the yap button
   const handleYapClick = () => {
